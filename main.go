@@ -31,4 +31,18 @@ func main() {
 	const baseCuadrado = 10
 	areaCuadrado := baseCuadrado * baseCuadrado
 	fmt.Println(areaCuadrado)
+
+	//Declaracion de variables
+	helloMessage := "Hello"
+	worldMessage := "world"
+
+	fmt.Println(helloMessage, worldMessage)
+
+	//Printf
+	nombre := "Platzi"
+	cursos := 500
+	fmt.Printf("%s tiene mas de %d cursos\n", nombre, cursos)
+
+	// Tipo de dato
+	fmt.Printf("nombre : %T\n", nombre)
 }
