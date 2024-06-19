@@ -81,9 +81,24 @@ func main() {
 	}
 
 	//For forver
-	counterForever := 0
-	for {
-		fmt.Println(counterForever)
-		counterForever++
+	// counterForever := 0
+	// for {
+	// 	fmt.Println(counterForever)
+	// 	counterForever++
+	// }
+
+	valor1 := 1
+	valor2 := 2
+	if valor1 == 1 {
+		fmt.Printf("Es %b", valor1)
+	} else {
+		fmt.Printf("No es %b", valor2)
+	}
+
+	switch modulo := 4 % 2; modulo {
+	case 0:
+		fmt.Println("Es par")
+	default:
+		fmt.Println("Es impar")
 	}
 }
