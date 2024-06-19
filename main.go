@@ -2,6 +2,18 @@ package main
 
 import "fmt"
 
+func normalFunction(message string) {
+	fmt.Println(message)
+}
+
+func tripleArgument(a, b int, c string) {
+	fmt.Println(a, b, c)
+}
+
+func dobleReturn(a int) (c, d int) {
+	return a, a * 2
+}
+
 func main() {
 	// Declaracion de constantes
 	const pi float64 = 3.14
@@ -45,4 +57,33 @@ func main() {
 
 	// Tipo de dato
 	fmt.Printf("nombre : %T\n", nombre)
+
+	normalFunction("hola elam")
+	tripleArgument(1, 2, "elam")
+
+	value1, value2 := dobleReturn((2))
+
+	fmt.Println("value1", value1)
+
+	fmt.Println("value2", value2)
+
+	//Ciclo for condicional
+
+	for i := 0; i < 10; i++ {
+		fmt.Println(i)
+	}
+	// for while
+	counter := 0
+
+	for counter < 10 {
+		counter++
+		fmt.Println(counter)
+	}
+
+	//For forver
+	counterForever := 0
+	for {
+		fmt.Println(counterForever)
+		counterForever++
+	}
 }
