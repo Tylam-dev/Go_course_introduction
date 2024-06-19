@@ -25,4 +25,8 @@ func main() {
 	fmt.Println(nuevoArray)
 	slice2 = append(slice2, newSlice...)
 
+	//recorre array
+	for _, i := range slice {
+		fmt.Println(i)
+	}
 }
