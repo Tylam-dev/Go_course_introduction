@@ -2,103 +2,27 @@ package main
 
 import "fmt"
 
-func normalFunction(message string) {
-	fmt.Println(message)
-}
-
-func tripleArgument(a, b int, c string) {
-	fmt.Println(a, b, c)
-}
-
-func dobleReturn(a int) (c, d int) {
-	return a, a * 2
-}
-
 func main() {
-	// Declaracion de constantes
-	const pi float64 = 3.14
-	const pi2 = 3.14
-	fmt.Println("pi", pi)
-	fmt.Println("pi2", pi2)
+	var array [4]int
+	array[0] = 0
+	array[1] = 1
+	fmt.Println(array[3], len(array), cap(array))
 
-	//Declaracion de variables enteras
+	//Crear array poblado
+	slice := []int{2, 4, 21, 5, 10, 3, 2, 5}
+	fmt.Println(slice, len(slice), cap(slice))
 
-	base := 12
+	//Primer elemento inclusivo, ultimo no inclusivo
+	fmt.Println(slice[0:1])
 
-	var altura int = 14
-	var area int
+	// metodo append
+	newSlice := []int{2, 6, 4, 8, 3, 1}
+	newSlice = append(newSlice, 1, 2, 3)
+	slice2 := []int{}
+	// Si no se especifica el tamaño del array es dinamico (slice)
+	var nuevoArray []int
+	nuevoArray = append(nuevoArray, 2, 3)
+	fmt.Println(nuevoArray)
+	slice2 = append(slice2, newSlice...)
 
-	fmt.Println(base, altura, area)
-
-	//Zero values
-	var a int
-	var b float64
-	var c string
-	var d bool
-
-	fmt.Println(a, b, c, d)
-
-	//Area de un cuadrado
-
-	const baseCuadrado = 10
-	areaCuadrado := baseCuadrado * baseCuadrado
-	fmt.Println(areaCuadrado)
-
-	//Declaracion de variables
-	helloMessage := "Hello"
-	worldMessage := "world"
-
-	fmt.Println(helloMessage, worldMessage)
-
-	//Printf
-	nombre := "Platzi"
-	cursos := 500
-	fmt.Printf("%s tiene mas de %d cursos\n", nombre, cursos)
-
-	// Tipo de dato
-	fmt.Printf("nombre : %T\n", nombre)
-
-	normalFunction("hola elam")
-	tripleArgument(1, 2, "elam")
-
-	value1, value2 := dobleReturn((2))
-
-	fmt.Println("value1", value1)
-
-	fmt.Println("value2", value2)
-
-	//Ciclo for condicional
-
-	for i := 0; i < 10; i++ {
-		fmt.Println(i)
-	}
-	// for while
-	counter := 0
-
-	for counter < 10 {
-		counter++
-		fmt.Println(counter)
-	}
-
-	//For forver
-	// counterForever := 0
-	// for {
-	// 	fmt.Println(counterForever)
-	// 	counterForever++
-	// }
-
-	valor1 := 1
-	valor2 := 2
-	if valor1 == 1 {
-		fmt.Printf("Es %b", valor1)
-	} else {
-		fmt.Printf("No es %b", valor2)
-	}
-
-	switch modulo := 4 % 2; modulo {
-	case 0:
-		fmt.Println("Es par")
-	default:
-		fmt.Println("Es impar")
-	}
 }
