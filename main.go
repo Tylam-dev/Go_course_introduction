@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	pk "golang_introduccion/mypackage"
+)
 
 type car struct {
 	brand string
@@ -15,4 +18,16 @@ func main() {
 	var otherCar car
 	otherCar.brand = "Ferrari"
 	fmt.Println(otherCar)
+
+	var newCar pk.CarPublic
+	newCar.Brand = "Ferrari"
+	newCar.Year = 2024
+
+	fmt.Println(newCar)
+
+	//No se puede establaces debido a que es privado
+	// var secondNewCar carPrivate
+
+	//Los metodos y types con mayusculas son Publicos
+	pk.PrintMessage()
 }
