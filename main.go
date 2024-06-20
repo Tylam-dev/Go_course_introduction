@@ -2,21 +2,26 @@ package main
 
 import (
 	"fmt"
+	"sync"
+	"time"
 )
 
-type pc struct {
-	ram   int
-	brand string
-}
-
-func (pc pc) String() string {
-	return fmt.Sprintf("La memoria es %d y su marca es %s", pc.ram, pc.brand)
+func say(text string, wg *sync.WaitGroup) {
+	defer wg.Done()
+	fmt.Println(text)
 }
 
 func main() {
-	nuevaPc := pc{
-		ram:   16,
-		brand: "Lenovo",
-	}
-	fmt.Println(nuevaPc)
+	var wg sync.WaitGroup
+
+	fmt.Println("hello")
+	wg.Add(1)
+	go say("world", &wg)
+
+	wg.Wait()
+
+	go func(text string) {
+		fmt.Println(text)
+	}("Adios")
+	time.Sleep(time.Second * 1)
 }
